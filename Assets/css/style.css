@@ -95,7 +95,7 @@ header{
         overflow: hidden;
     }
     .navbar.active{
-        height: 330px;
+        height: 300px;
         z-index: 2;
     }
     .navbar ul{
@@ -364,7 +364,7 @@ header{
 }
 .left{
     height: 100%;
-    background: url("/Medicare/Assets/image/article1.png") no-repeat center;
+    background: url("/Assets/image/article2.png") no-repeat center;
     background-size: cover;
 }
 .right{
@@ -430,7 +430,7 @@ header{
         height: 200px;
     }
 }
-
+/* Test */
 label {
     display: flex;
     cursor: pointer;
