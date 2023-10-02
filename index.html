@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     <header>
         <div class="logo">M.H.E.T</div>
         <div class="hamburger">
@@ -25,6 +26,9 @@
             </ul>
         </nav>
     </header>
+    <!-- Navbar End -->
+
+    <!-- Hero -->
     <section class="home">
         <div class="home-content">
             <h1>Hi, We are M.H.E.T</h1>
@@ -37,6 +41,9 @@
         </div>
         <img src="./Assets/image/doctorhand.png" alt="under construction" class="home-img">
     </section>
+    <!-- Hero End -->
+
+    <!-- About Check Up -->
     <section id="test">
         <div id="container">
             <h1 class="sub-title">TEST</h1>
@@ -81,6 +88,9 @@
             </div>
         </div>
     </section>
+    <!-- About Check Up End -->
+
+    <!-- Article  -->
     <section id="container">
         <div class="site-container">
             <h1 class="sub-title-article">About Mental Health</h1>
@@ -147,18 +157,29 @@
             </div>
         </div>
     </section>
+    <!-- Article End  -->
+
+    <!-- Feedback form -->
     <section id="contact-us">
         <div class="contact-container">
             <div class="contact-box">
                 <div class="left">
-                    <br />
                     <h2>Testimoni</h2>
-                    <img src="/Assets/image/contact.png" alt="" />
+                    <br>
+                    <div class="carousel">
+                        <% data.forEach(data => { %>
+                        <div class="carousel-slide">
+                            <h5>"<%= data.name %>"</h5>
+                            <br />
+                            <p><%= data.message %></p>
+                        </div>
+                        <% }) %>
+                    </div>
                 </div>
                 <div class="right">
-                    <br />
                     <h2>Rate Us</h2>
-                    <form action="" method="post">
+                    <br>
+                    <form method="post">
                         <div class="rating">
                             <input type="radio" id="star5" name="rating" value="5" checked />
                             <label for="star5"></label>
@@ -171,17 +192,18 @@
                             <input type="radio" id="star1" name="rating" value="1" />
                             <label for="star1"></label>
                         </div>
-
-                        <input type="text" class="field" placeholder="your name" />
-                        <input type="email" class="field" placeholder="your email" />
-                        <input type="text" class="field" placeholder="your phone number" />
-                        <textarea class="field area" placeholder="Message"></textarea>
+                        <input type="text" class="field" name="nama" maxlength="100" placeholder="Masukan Nama " />
+                        <input type="email" class="field" name="email" maxlength="100" placeholder="Masukan Email " />
+                        <input type="text" class="field" name="Telephone" maxlength="100"
+                            placeholder="Masukan Nomor Telephone" />
+                        <textarea class="field area" maxlength="100" placeholder="Berikan Feedback"></textarea>
                     </form>
                     <button class="btn" onclick="sendData()">Send</button>
                 </div>
             </div>
         </div>
     </section>
+    <!-- feedback form end -->
     <script src="./Assets/js/script.js"></script>
 </body>
 

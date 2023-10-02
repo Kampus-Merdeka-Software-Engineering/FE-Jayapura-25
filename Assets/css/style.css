@@ -132,6 +132,8 @@ header {
     }
 }
 
+/* Navbar End */
+
 /*HOME*/
 .home {
     background-image: linear-gradient(to right, #0C356A, aliceblue);
@@ -199,6 +201,8 @@ header {
     font-weight: 600;
     color: aliceblue;
 }
+
+/* Home End */
 
 /*card test*/
 .card-wrapper {
@@ -305,6 +309,8 @@ header {
     }
 }
 
+/* Card test End */
+
 /*Card article*/
 .sub-title-article {
     color: #fff;
@@ -385,9 +391,11 @@ header {
     overflow: hidden;
 }
 
+/* Card Article End */
 
 
-/*Contact Us*/
+
+/*Feedback form*/
 .contact-container {
     position: relative;
     display: flex;
@@ -421,7 +429,7 @@ header {
 
 .left {
     height: 100%;
-    margin-top: 70px;
+    padding: 25px 40px;
 }
 
 .left img {
@@ -519,17 +527,44 @@ header {
     color: gold;
 }
 
+/* .carousel {
+    position: relative;
+    left: 200px;
+    top: 150px;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide h5 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.carousel-slide p {
+    font-size: 24px;
+    font-weight: 300;
+} */
+
+
 @media screen and (max-width: 900px) {
     .contact-box {
         grid-template-columns: 1fr;
     }
 
     .left {
-        height: 200px;
+        height: 400px;
     }
 }
 
-/* Test */
+/* Feedback form End */
+
+/* check Up */
 label {
     display: flex;
     cursor: pointer;
@@ -760,6 +795,8 @@ h2 {
 .button-submit:disabled {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
+
+/* Check Up End */
 
 /* About Us */
 .service-list {
