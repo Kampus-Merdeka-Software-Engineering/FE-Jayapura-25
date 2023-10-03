@@ -104,17 +104,17 @@ function ambilNilai() {
     alert("Silahkan Isi Seluruh Jawaban!");
   } else if (total > 0 && total < 14) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress Anda : Low Stress`;
+      modalContent.innerHTML = `Level Stress : Low Stress`;
       modal.style.display = "block";
     });
   } else if (total > 14 && total < 27) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress Anda : Moderate Stress`;
+      modalContent.innerHTML = `Level Stress : Moderate Stress`;
       modal.style.display = "block";
     });
   } else if (total > 27 && total < 41) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress Anda : High Preceived Stress`;
+      modalContent.innerHTML = `Level Stress : High Preceived Stress`;
       modal.style.display = "block";
     });
   }

@@ -50,6 +50,7 @@
             <div class="card-wrapper">
                 <div class="card">
                     <div class="card-header">
+                        <img src="./Assets/image/test.gif" alt="" />
                     </div>
                     <div class="info">
                         <p class="title">Mental Health Test</p>
@@ -97,7 +98,7 @@
             <div class="article-container">
                 <article class="article-card">
                     <figure class="article-image">
-                        <img src="/Assets/image/1.png" alt="" />
+                        <img src="./Assets/image/1.png" alt="" />
                     </figure>
                     <div class="article-content">
                         <a href="" class="card-category">Issue</a>
@@ -113,7 +114,7 @@
                 </article>
                 <article class="article-card">
                     <figure class="article-image">
-                        <img src="/Assets/image/2.png" alt="" />
+                        <img src="./Assets/image/2.png" alt="" />
                     </figure>
                     <div class="article-content">
                         <a href="" class="card-category">Therapy</a>
@@ -127,7 +128,7 @@
                 </article>
                 <article class="article-card">
                     <figure class="article-image">
-                        <img src="/Assets/image/3.png" alt="" />
+                        <img src="./Assets/image/3.png" alt="" />
                     </figure>
                     <div class="article-content">
                         <a href="" class="card-category">Issue</a>
@@ -142,7 +143,7 @@
                 </article>
                 <article class="article-card">
                     <figure class="article-image">
-                        <img src="/Assets/image/4.png" alt="" />
+                        <img src="./Assets/image/4.png" alt="" />
                     </figure>
                     <div class="article-content">
                         <a href="" class="card-category">Therapy</a>
@@ -166,14 +167,8 @@
                 <div class="left">
                     <h2>Testimoni</h2>
                     <br>
-                    <div class="carousel">
-                        <% data.forEach(data => { %>
-                        <div class="carousel-slide">
-                            <h5>"<%= data.name %>"</h5>
-                            <br />
-                            <p><%= data.message %></p>
-                        </div>
-                        <% }) %>
+                    <div class="carousel" id="carousel">
+
                     </div>
                 </div>
                 <div class="right">

@@ -24,7 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px;
+    padding: 0 10%;
 }
 
 #container {
@@ -111,13 +111,13 @@ header {
     }
 
     .navbar.active {
-        height: 300px;
+        height: 280px;
         z-index: 2;
     }
 
     .navbar ul {
         display: block;
-        margin: 70px auto 0 auto;
+        margin: 50px auto 0 auto;
         text-align: center;
         transition: 0.5s;
         opacity: 0;
@@ -130,6 +130,19 @@ header {
     .navbar ul li a {
         margin-bottom: 12px;
     }
+
+    .navbar ul li a::after {
+        display: block;
+        content: "";
+        border-bottom: 2px solid aqua;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+
+    .navbar ul li a:hover::after {
+        transform: scaleX(0.1);
+    }
+
 }
 
 /* Navbar End */
@@ -138,7 +151,7 @@ header {
 .home {
     background-image: linear-gradient(to right, #0C356A, aliceblue);
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     padding: 300px 10%;
@@ -232,16 +245,20 @@ header {
 }
 
 .card-header {
+    height: 17rem;
     position: relative;
     background-clip: border-box;
     margin-top: 1.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 0.75rem;
-    background: url("/Assets/image/test.gif") no-repeat center;
-    background-size: cover;
     box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.4), 0 4px 6px -4px rgba(33, 150, 243, 0.4);
-    height: 14rem;
+}
+
+.card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-header:hover {
@@ -324,15 +341,17 @@ header {
 }
 
 .article-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 25px;
-    width: 200px;
+    max-width: 100%;
 }
 
 .article-image img {
-    margin-left: 95px;
-    max-width: 100%;
-    max-height: 150px;
+    width: 60%;
     border-radius: 20px 20px 0 0;
+    object-fit: cover;
 }
 
 .article-card {
@@ -376,7 +395,6 @@ header {
 
 .article-content .card-title {
     margin-bottom: 20px;
-
     color: #22447b;
 }
 
@@ -560,6 +578,17 @@ header {
     .left {
         height: 400px;
     }
+
+    .carousel {
+        position: relative;
+        top: 100px;
+        left: 20%;
+    }
+
+    .card-header img {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 /* Feedback form End */
@@ -686,6 +715,7 @@ label span:before {
         padding: 15px 20px;
         /* Adjust padding for smaller screens */
     }
+
 }
 
 .modal {
@@ -704,7 +734,7 @@ label span:before {
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
-    width: 50%;
+    width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -717,7 +747,7 @@ h2 {
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -929,8 +959,8 @@ h2 {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     }
 
-    .card-header img {
+    /* .card-header img {
         width: 350px;
         left: 120px;
-    }
+    } */
 }
