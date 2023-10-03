@@ -128,3 +128,57 @@ function ambilNilai() {
     }
   });
 }
+
+var btn = document.getElementById("buttonSubmit");
+var rating = document.getElementsByClassName("rating");
+var nama = document.getElementById("nama");
+var email = document.getElementById("email");
+var phone = document.getElementById("phone");
+var message = document.getElementById("message");
+
+btn.addEventListener("click", sendData);
+
+function sendData() {
+  fetch("http://localhost:4000/home", {
+    method: "POST",
+    body: JSON.stringify({
+      rating: rating.value,
+      nama: nama.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value,
+    }),
+  })
+    .then(function (response) {
+      if (response.ok) {
+        return response.redirect("http://localhost:4000/");
+      }
+      return Promise.reject(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+$.getJSON("http://localhost:4000/testimoni", function (data) {
+  let item = data.data;
+  let currentIndex = 0;
+
+  function showNextItem() {
+    if (currentIndex < item.length) {
+      let currentItem = item[currentIndex];
+      $("#carousel").html(`
+      <br>
+        <h1 style="font-size:48px; font-weight:540">"${currentItem.nama.toUpperCase()}"</h1>
+        <br>
+        <p style="font-size:24px;">${currentItem.message}</p>
+      `);
+      currentIndex++;
+    } else {
+      // Memulai dari Awal
+      clearInterval(interval);
+    }
+  }
+  // Memanggil showNextItem() setiap 3 detik
+  let interval = setInterval(showNextItem, 3000);
+});

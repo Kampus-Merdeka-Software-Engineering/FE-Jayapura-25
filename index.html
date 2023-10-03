@@ -34,9 +34,7 @@
             <h1>Hi, We are M.H.E.T</h1>
             <h3>Mental Health Evaluation and Therapy</h3>
             <p>
-                Your Trusted Partner in Comprehensive Mental Health Assessment and Therapeutic Services. At M.H.E.T,
-                we're dedicated to supporting and enhancing your mental well-being through a range of innovative and
-                evidence-based therapies
+                “Taking care of your mental health is an act of self-love.”
             </p>
         </div>
         <img src="./Assets/image/doctorhand.png" alt="under construction" class="home-img">
@@ -175,25 +173,29 @@
                     <h2>Rate Us</h2>
                     <br>
                     <form method="post">
-                        <div class="rating">
-                            <input type="radio" id="star5" name="rating" value="5" checked />
-                            <label for="star5"></label>
-                            <input type="radio" id="star4" name="rating" value="4" />
-                            <label for="star4"></label>
-                            <input type="radio" id="star3" name="rating" value="3" />
-                            <label for="star3"></label>
-                            <input type="radio" id="star2" name="rating" value="2" />
-                            <label for="star2"></label>
-                            <input type="radio" id="star1" name="rating" value="1" />
-                            <label for="star1"></label>
-                        </div>
-                        <input type="text" class="field" name="nama" maxlength="100" placeholder="Masukan Nama " />
-                        <input type="email" class="field" name="email" maxlength="100" placeholder="Masukan Email " />
-                        <input type="text" class="field" name="Telephone" maxlength="100"
-                            placeholder="Masukan Nomor Telephone" />
-                        <textarea class="field area" maxlength="100" placeholder="Berikan Feedback"></textarea>
-                    </form>
-                    <button class="btn" onclick="sendData()">Send</button>
+                        <form action="http://localhost:4000/home" method="POST">
+                            <div class="rating">
+                                <input type="radio" id="star5" class="rating" name="rating" value="5" checked />
+                                <label for="star5"></label>
+                                <input type="radio" id="star4" class="rating" name="rating" value="4" />
+                                <label for="star4"></label>
+                                <input type="radio" id="star3" class="rating" name="rating" value="3" />
+                                <label for="star3"></label>
+                                <input type="radio" id="star2" class="rating" name="rating" value="2" />
+                                <label for="star2"></label>
+                                <input type="radio" id="star1" class="rating" name="rating" value="1" />
+                                <label for="star1"></label>
+                            </div>
+                            <input type="text" class="field" id="nama" name="nama" maxlength="100"
+                                placeholder="Masukan Nama " />
+                            <input type="email" class="field" id="email" name="email" maxlength="100"
+                                placeholder="Masukan Email " />
+                            <input type="text" class="field" id="phone" name="phone" maxlength="100"
+                                placeholder="Masukan Nomor Telephone" />
+                            <textarea class="field area" id="message" maxlength="100" name="message"
+                                placeholder="Berikan Feedback"></textarea>
+                            <button class="btn" id="buttonSubmit">Send</button>
+                        </form>
                 </div>
             </div>
         </div>
