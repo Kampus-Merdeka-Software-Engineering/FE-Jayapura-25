@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const startTestButton = document.getElementById("start-test");
 
   // Tambahkan event listener untuk tombol "Start Test"
-  startTestButton.addEventListener("click", function (event) {
+  startTestButton.addEventListener("click", (event) => {
     event.preventDefault(); // Mencegah tindakan default dari tautan
 
     // Sembunyikan section "home"
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Get all the form elements with the class "form-test"
+// Ambil Form Test
 const forms = document.querySelectorAll(".form-test");
 
 // Add a change event listener to each radio button in the forms
@@ -33,21 +33,15 @@ forms.forEach((form, index) => {
   const radioButtons = form.querySelectorAll('input[type="radio"]');
   radioButtons.forEach((radioButton, radioIndex) => {
     radioButton.addEventListener("change", () => {
-      // Get the position of the next form
       if (index < forms.length - 1) {
         const nextForm = forms[index + 1];
         const rect = nextForm.getBoundingClientRect();
 
-        // Calculate the center position of the viewport vertically
-        const windowHeight =
-          window.innerHeight || document.documentElement.clientHeight;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         const centerY = window.scrollY + windowHeight / 2;
 
-        // Calculate the scroll position to center the next form vertically
-        const scrollToY =
-          rect.top + window.scrollY - windowHeight / 2 + rect.height / 2;
+        const scrollToY = rect.top + window.scrollY - windowHeight / 2 + rect.height / 2;
 
-        // Scroll to the next form with smooth behavior
         window.scrollTo({
           top: scrollToY,
           behavior: "smooth",
@@ -98,23 +92,40 @@ function ambilNilai() {
   var total = tampungNilai.reduce(function (accu, curr) {
     return accu + curr;
   }, 0);
-
+  var solusi1 = `
+  <ol>
+    <li>A</li>
+    <li>B</li>
+  </ol>
+  `;
+  var solusi2 = `
+  <ol>
+    <li>A</li>
+    <li>B</li>
+  </ol>
+  `;
+  var solusi3 = `
+  <ol>
+    <li>A</li>
+    <li>B</li>
+  </ol>
+  `;
   // Penyesuaian Nilai
   if (tampungNilai.length < 10) {
     alert("Silahkan Isi Seluruh Jawaban!");
   } else if (total > 0 && total < 14) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress : Low Stress`;
+      modalContent.innerHTML = `Level Stress Anda : Low Stress Anda Bisa Melakukan ${solusi1}`;
       modal.style.display = "block";
     });
   } else if (total > 14 && total < 27) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress : Moderate Stress`;
+      modalContent.innerHTML = `Level Stress Anda : Moderate Stress Anda Bisa Melakukan ${solusi2}`;
       modal.style.display = "block";
     });
   } else if (total > 27 && total < 41) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress : High Preceived Stress`;
+      modalContent.innerHTML = `Level Stress Anda : High Preceived Stress Anda Bisa Melakukan ${solusi3}`;
       modal.style.display = "block";
     });
   }
@@ -128,7 +139,6 @@ function ambilNilai() {
     }
   });
 }
-
 var btn = document.getElementById("buttonSubmit");
 var rating = document.getElementsByClassName("rating");
 var nama = document.getElementById("nama");
@@ -151,12 +161,12 @@ function sendData() {
   })
     .then(function (response) {
       if (response.ok) {
-        return response.redirect("http://localhost:4000/");
+        return response.json();
       }
       return Promise.reject(response);
     })
     .catch(function (error) {
-      console.log(error);
+      alert(error);
     });
 }
 
