@@ -37,10 +37,12 @@ forms.forEach((form, index) => {
         const nextForm = forms[index + 1];
         const rect = nextForm.getBoundingClientRect();
 
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
         const centerY = window.scrollY + windowHeight / 2;
 
-        const scrollToY = rect.top + window.scrollY - windowHeight / 2 + rect.height / 2;
+        const scrollToY =
+          rect.top + window.scrollY - windowHeight / 2 + rect.height / 2;
 
         window.scrollTo({
           top: scrollToY,
@@ -93,44 +95,47 @@ function ambilNilai() {
     return accu + curr;
   }, 0);
   var solusi1 = `
-  <ol>
-    <li>A</li>
-    <li>B</li>
-  </ol>
+  <p>
+  Ini adalah kondisi di mana seseorang merasa relatif tenang, tidak terlalu cemas, dan tidak terlalu terbebani oleh tuntutan dan tekanan sehari-hari. 
+  Tingkat stres yang rendah biasanya dianggap sebagai tanda kesejahteraan mental dan fisik yang baik.
+  </p>
   `;
   var solusi2 = `
-  <ol>
-    <li>A</li>
-    <li>B</li>
-  </ol>
+  <p>
+  Stres sedang adalah tingkat stres yang masih dalam kisaran normal dalam kehidupan sehari-hari. Ini mungkin terkait dengan tuntutan pekerjaan, masalah pribadi, atau peristiwa kehidupan, tetapi masih bisa dikelola tanpa dampak serius pada kesejahteraan. Cara mengatasinya termasuk berbicara dengan seseorang, berolahraga, relaksasi, menjaga tidur yang baik, dan mengatur waktu dengan bijak. Jika stres sedang terus berlanjut, pertimbangkan untuk mencari bantuan profesional.
+  </p>
   `;
   var solusi3 = `
-  <ol>
-    <li>A</li>
-    <li>B</li>
-  </ol>
+  <p>
+  tingkat stres yang sangat tinggi atau berlebihan yang dirasakan oleh seseorang dalam kehidupan sehari-hari. Ini adalah kondisi di mana seseorang merasa sangat terbebani, cemas, dan tertekan oleh berbagai tuntutan, tekanan, atau peristiwa dalam hidup mereka. Tingkat stres yang sangat tinggi dapat berdampak negatif pada kesejahteraan mental dan fisik seseorang.
+  High perceived stress dapat memiliki dampak serius pada kesehatan mental dan fisik seseorang. Oleh karena itu, penting untuk mengatasi stres ini dengan serius. Beberapa cara untuk mengelola high perceived stress termasuk manajemen stres, olahraga teratur, meditasi, berkonsultasi dengan seorang profesional kesehatan mental, dan mencari dukungan dari teman atau keluarga.
+  </p>
   `;
   // Penyesuaian Nilai
   if (tampungNilai.length < 10) {
     alert("Silahkan Isi Seluruh Jawaban!");
   } else if (total > 0 && total < 14) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress Anda : Low Stress Anda Bisa Melakukan ${solusi1}`;
+      modalContent.innerHTML = `Level Stress Anda : Low Stress
+      ${solusi1}`;
+      // modalContent.innerHTML = `${solusi1}`;
       modal.style.display = "block";
     });
   } else if (total > 14 && total < 27) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress Anda : Moderate Stress Anda Bisa Melakukan ${solusi2}`;
+      modalContent.innerHTML = `Level Stress Anda : Moderate Stress 
+      ${solusi2}`;
       modal.style.display = "block";
     });
   } else if (total > 27 && total < 41) {
     submitButton.addEventListener("click", function () {
-      modalContent.innerHTML = `Level Stress Anda : High Preceived Stress Anda Bisa Melakukan ${solusi3}`;
+      modalContent.innerHTML = `Level Stress Anda : High Preceived Stress
+      ${solusi3}`;
       modal.style.display = "block";
     });
   }
   closeButton.addEventListener("click", function () {
-    modal.style.display = "none";
+    window.location.replace("/CheckUp.html");
   });
 
   window.addEventListener("click", function (event) {
@@ -149,7 +154,7 @@ var message = document.getElementById("message");
 btn.addEventListener("click", sendData);
 
 function sendData() {
-  fetch("http://localhost:4000/home", {
+  fetch("https://nodejs-production-2725.up.railway.app/home", {
     method: "POST",
     body: JSON.stringify({
       rating: rating.value,
@@ -170,25 +175,28 @@ function sendData() {
     });
 }
 
-$.getJSON("http://localhost:4000/testimoni", function (data) {
-  let item = data.data;
-  let currentIndex = 0;
+$.getJSON(
+  "https://nodejs-production-2725.up.railway.app/testimoni",
+  function (data) {
+    let item = data.data;
+    let currentIndex = 0;
 
-  function showNextItem() {
-    if (currentIndex < item.length) {
-      let currentItem = item[currentIndex];
-      $("#carousel").html(`
+    function showNextItem() {
+      if (currentIndex < item.length) {
+        let currentItem = item[currentIndex];
+        $("#carousel").html(`
       <br>
         <h1 style="font-size:48px; font-weight:540">"${currentItem.nama.toUpperCase()}"</h1>
         <br>
         <p style="font-size:24px;">${currentItem.message}</p>
       `);
-      currentIndex++;
-    } else {
-      // Memulai dari Awal
-      clearInterval(interval);
+        currentIndex++;
+      } else {
+        // Memulai dari Awal
+        clearInterval(interval);
+      }
     }
+    // Memanggil showNextItem() setiap 3 detik
+    let interval = setInterval(showNextItem, 3000);
   }
-  // Memanggil showNextItem() setiap 3 detik
-  let interval = setInterval(showNextItem, 3000);
-});
+);
