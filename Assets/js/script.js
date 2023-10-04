@@ -135,7 +135,9 @@ function ambilNilai() {
     });
   }
   closeButton.addEventListener("click", function () {
-    window.location.replace("/CheckUp.html");
+    window.location.replace(
+      "https://kampus-merdeka-software-engineering.github.io/FE-Jayapura-25/CheckUp.html"
+    );
   });
 
   window.addEventListener("click", function (event) {

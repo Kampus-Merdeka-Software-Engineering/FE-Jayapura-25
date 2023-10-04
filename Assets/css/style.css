@@ -1014,7 +1014,15 @@ h2 {
   .modal-content {
     width: 80%;
     margin: 15% auto;
-    height: 40%s;
+    height: 60%;
+  }
+}
+
+@media(max-width: 470px) {
+  .modal-content {
+    width: 80%;
+    margin: 15% auto;
+    height: 78%;
   }
 }
 
