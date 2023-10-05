@@ -158,6 +158,9 @@ btn.addEventListener("click", sendData);
 function sendData() {
   fetch("https://nodejs-production-2725.up.railway.app/post", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       rating: rating.value,
       nama: nama.value,
