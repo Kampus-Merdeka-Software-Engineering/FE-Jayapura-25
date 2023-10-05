@@ -156,7 +156,7 @@ var message = document.getElementById("message");
 btn.addEventListener("click", sendData);
 
 function sendData() {
-  fetch("https://nodejs-production-2725.up.railway.app/home", {
+  fetch("https://nodejs-production-2725.up.railway.app/post", {
     method: "POST",
     body: JSON.stringify({
       rating: rating.value,
