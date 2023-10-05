@@ -537,7 +537,7 @@ header {
 
 .rating>input:checked~label::before,
 .rating>label:hover::before {
-  content: "\2605";
+  /* content: "\2605"; */
   color: gold;
 }
 
@@ -659,7 +659,7 @@ label {
   cursor: pointer;
   font-size: 24px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 0.375em;
 }
 

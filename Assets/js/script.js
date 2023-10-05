@@ -173,7 +173,7 @@ function sendData() {
       if (response.ok) {
         return response.json();
       }
-      // return Promise.reject(response);
+      return Promise.reject(response);
     })
     .catch(function (error) {
       alert(error);
