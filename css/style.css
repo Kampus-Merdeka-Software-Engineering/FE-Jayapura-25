@@ -235,7 +235,7 @@ header {
 }
 
 .side-articel p {
-  padding: 0 0 0 150px;
+  padding: 0 0 0 200px;
   font-weight: 300;
   font-size: large;
   color: #0c356a;
@@ -248,7 +248,7 @@ header {
   justify-content: space-between;
   border-radius: 0.75rem;
   background-color: #d6e5fa;
-  width: 100%;
+  width: 1500px;
   height: 550px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
@@ -266,8 +266,8 @@ header {
 
 .card-header img {
   width: 100%;
-  position: relative;
-  left: 10px;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card-header:hover {
@@ -349,6 +349,17 @@ header {
 
   .card-header {
     display: none;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+    background-color: #d6e5fa;
+    width: 70%;
+    height: 550px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
   .left .carousel {
@@ -646,11 +657,6 @@ header {
     position: relative;
     top: 100px;
     left: 5%;
-  }
-
-  .card-header img {
-    text-align: center;
-    width: 80%;
   }
 }
 
@@ -1037,22 +1043,10 @@ h2 {
     font-size: 2.5rem;
   }
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 0.75rem;
-    background-color: #d6e5fa;
-    width: 75%;
-    height: 550px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  }
-
   .card-header img {
-    width: 300px;
-
-    position: relative;
-    left: 20%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
 }
