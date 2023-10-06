@@ -107,8 +107,8 @@ function ambilNilai() {
   `;
   var solusi3 = `
   <p>
-  tingkat stres yang sangat tinggi atau berlebihan yang dirasakan oleh seseorang dalam kehidupan sehari-hari. Ini adalah kondisi di mana seseorang merasa sangat terbebani, cemas, dan tertekan oleh berbagai tuntutan, tekanan, atau peristiwa dalam hidup mereka. Tingkat stres yang sangat tinggi dapat berdampak negatif pada kesejahteraan mental dan fisik seseorang.
-  High perceived stress dapat memiliki dampak serius pada kesehatan mental dan fisik seseorang. Oleh karena itu, penting untuk mengatasi stres ini dengan serius. Beberapa cara untuk mengelola high perceived stress termasuk manajemen stres, olahraga teratur, meditasi, berkonsultasi dengan seorang profesional kesehatan mental, dan mencari dukungan dari teman atau keluarga.
+  
+  Stres yang tinggi terjadi saat seseorang merasa sangat terbebani oleh berbagai tuntutan dan tekanan dalam hidup mereka. Ini dapat berdampak negatif pada kesejahteraan mental dan fisik. Cara-cara mengelola stres tinggi melibatkan praktik manajemen stres sehari-hari, menjalani rutinitas olahraga teratur, meditasi untuk meredakan pikiran, dan jika perlu, berkonsultasi dengan seorang profesional kesehatan mental. Dukungan sosial dari teman dan keluarga juga dapat sangat membantu dalam menghadapi stres.
   </p>
   `;
   // Penyesuaian Nilai
@@ -191,7 +191,7 @@ $.getJSON(
         let currentItem = item[currentIndex];
         $("#carousel").html(`
       <br>
-        <h1 style="font-size:48px; font-weight:540">"${currentItem.nama.toUpperCase()}"</h1>
+        <h1 style="font-size:30px; font-weight:540">"${currentItem.nama.toUpperCase()}"</h1>
         <br>
         <p style="font-size:24px;">${currentItem.message}</p>
       `);

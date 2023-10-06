@@ -959,7 +959,7 @@ label span:before {
 
 .modal-content {
   text-align: center;
-  height: 35%;
+  height: 40%;
   background-color: #fff;
   margin: 15% auto;
   padding: 20px;
@@ -1022,7 +1022,7 @@ h2 {
   .modal-content {
     width: 80%;
     margin: 15% auto;
-    height: 78%;
+    height: 80%;
   }
 }
 
