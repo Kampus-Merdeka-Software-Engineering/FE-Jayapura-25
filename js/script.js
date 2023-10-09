@@ -193,7 +193,7 @@ $.getJSON(
       <br>
         <p style="font-size:1.5rem;">"${currentItem.message}"</p>
         <br>
-        <h1 style="font-size:1.2rem; font-weight:540; ">${currentItem.nama.toUpperCase()}</h1>
+        <h3 style="font-size:1.3rem; font-weight:540; ">${currentItem.nama.toUpperCase()}</h3>
       `);
         currentIndex++;
       } else {
