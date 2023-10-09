@@ -321,70 +321,6 @@ header {
   border-radius: 0.5rem;
 }
 
-@media only screen and (max-width: 1200px) {
-  .card-wrapper p {
-    display: none;
-  }
-
-  .card {
-    max-width: 100%;
-    position: relative;
-    left: 15%;
-    max-height: 300px;
-  }
-
-  .card .info,
-  .card p {
-    display: inline-block;
-  }
-
-  .card .info {
-    margin: auto;
-  }
-
-  .card .info p {
-    font-size: 17px;
-    line-height: 20px;
-  }
-
-  .card-header {
-    display: none;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 0.75rem;
-    background-color: #d6e5fa;
-    width: 70%;
-    height: 550px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  }
-
-  .left .carousel {
-    width: 50%;
-    text-align: center;
-    position: relative;
-    top: 27%;
-    left: 25%;
-  }
-
-  .carousel h1 {
-    font-size: 28px !important;
-    font-weight: 500;
-  }
-
-  .rating {
-    width: 100%;
-  }
-
-  label::before {
-    font-size: 52px;
-    margin: 0;
-  }
-}
-
 /*Card article*/
 .sub-title-article {
   color: #fff;
@@ -554,11 +490,13 @@ header {
 
 .carousel {
   position: relative;
-  left: 200px;
+  justify-content: center;
+  align-items: center;
+  left: 25%;
   top: 150px;
   text-align: center;
-  width: 500px;
-  height: 500px;
+  width: 50%;
+  height: 70%;
   overflow: hidden;
 }
 
@@ -650,13 +588,13 @@ header {
   }
 
   .left {
-    max-height: 250px;
+    max-height: 1000px;
   }
 
-  .carousel {
+  .left.carousel {
     position: relative;
-    top: 100px;
-    left: 5%;
+    top: 150px;
+    width: 80%;
   }
 }
 
@@ -1049,4 +987,68 @@ h2 {
     object-fit: contain;
   }
 
+}
+
+@media only screen and (max-width: 1200px) {
+  .card-wrapper p {
+    display: none;
+  }
+
+  .card {
+    max-width: 100%;
+    position: relative;
+    left: 15%;
+    max-height: 300px;
+  }
+
+  .card .info,
+  .card p {
+    display: inline-block;
+  }
+
+  .card .info {
+    margin: auto;
+  }
+
+  .card .info p {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .card-header {
+    display: none;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+    background-color: #d6e5fa;
+    width: 70%;
+    height: 550px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  .left .carousel {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 27%;
+  }
+
+  .carousel h1 {
+    font-size: 28px !important;
+    font-weight: 500;
+  }
+
+  .rating {
+    width: 100%;
+  }
+
+  label::before {
+    font-size: 52px;
+    margin: 0;
+  }
 }
