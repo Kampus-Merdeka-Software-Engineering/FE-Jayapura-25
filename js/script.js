@@ -191,9 +191,9 @@ $.getJSON(
         let currentItem = item[currentIndex];
         $("#carousel").html(`
       <br>
-        <h1 style="font-size:30px; font-weight:540">"${currentItem.nama.toUpperCase()}"</h1>
+        <p style="font-size:30px;">"${currentItem.message}"</p>
         <br>
-        <p style="font-size:24px;">${currentItem.message}</p>
+        <h1 style="font-size:22px; font-weight:540; position: right">${currentItem.nama.toUpperCase()}</h1>
       `);
         currentIndex++;
       } else {
